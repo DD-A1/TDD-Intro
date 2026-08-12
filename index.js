@@ -12,7 +12,10 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  /* TODO */
+ if (num1 === num2) {
+  return (num1 + num2) * 2;
+ } 
+  return num1 + num2;
 }
 
 /**
@@ -28,8 +31,9 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
-  /* TODO */
-}
+  return num1 === 10 || num2  === 10 || (num1 + num2 === 10);
+  }
+  
 
 /**
  * Hint: Math.abs(num) returns the absolute value of num.
@@ -46,7 +50,7 @@ export function makes10(num1, num2) {
  * near100(105, 10); // true
  */
 export function near100(n, distance) {
-  /* TODO */
+  return Math.abs(n - 100) <= distance;
 }
 
 /**
@@ -63,7 +67,7 @@ export function near100(n, distance) {
  * isMultiple35(7); // false
  */
 export function isMultiple35(n) {
-  /* TODO */
+  return (n % 3 === 0)|| (n % 5 === 0);
 }
 
 /**
@@ -81,7 +85,7 @@ export function isMultiple35(n) {
  * shareLastDigit(10, 21); // false
  */
 export function shareLastDigit(num1, num2) {
-  /* TODO */
+  return num1 % 10 === num2 % 10;
 }
 
 /**
@@ -98,7 +102,7 @@ export function shareLastDigit(num1, num2) {
  * isColdAndHot(10, 50); // false
  */
 export function isColdAndHot(temp1, temp2) {
-  /* TODO */
+  return (temp1 < 0 && temp2 > 100) || (temp2 < 0 && temp1 > 100);
 }
 
 /**
@@ -114,7 +118,7 @@ export function isColdAndHot(temp1, temp2) {
  * makeABBA("a", "b"); // "abba"
  */
 export function makeABBA(A, B) {
-  /* TODO */
+  return A + B + B + A;
 }
 
 /**
@@ -135,7 +139,11 @@ export function makeABBA(A, B) {
  * makeSLS("a", "abc"); // "aabca"
  */
 export function makeSLS(str1, str2) {
-  /* TODO */
+  if (str1.length < str2.length) {
+    return str1 + str2 + str1;
+  } else {
+    return str2 + str1 + str2;
+  }
 }
 
 /**
@@ -156,14 +164,20 @@ export function makeSLS(str1, str2) {
  * canEnterClub(5, 5); // 1
  */
 export function canEnterClub(you, date) {
-  /* TODO */
+  if (you <= 2 || date <= 2){ 
+    return 0;
+  }else if (you  >= 8 || date >= 8) {
+    return 2;
+  } else {
+    return 1;
+  }
 }
 
 /**
  * Your phone rings. Normally you answer, except:
  * - In the morning, you only answer if it is your boss calling.
  * - If you are asleep, you do not answer at all.
- *
+ 
  * @param {boolean} isMorning - True if it is morning.
  * @param {boolean} isBoss - True if the caller is your boss.
  * @param {boolean} isAsleep - True if you are asleep.
@@ -177,5 +191,5 @@ export function canEnterClub(you, date) {
  * shouldAnswerPhone(true, true, false); // true
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
-  /* TODO */
+  return !isAsleep && (!isMorning || isBoss);
 }

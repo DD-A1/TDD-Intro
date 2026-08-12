@@ -11,7 +11,7 @@ import {
   makeSLS,
   canEnterClub,
   shouldAnswerPhone,
-} from "./index.js";
+} from "../index.js";
 
 describe("sumDouble", function () {
   it("adds two different positive numbers", function () {
